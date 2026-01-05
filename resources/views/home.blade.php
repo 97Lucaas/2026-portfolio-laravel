@@ -97,7 +97,7 @@
     <div class="flex">
         <img class="pres-img spin" src="profile-pic (1).png" alt="Photo de lucas duverneuil" alt="">
         <div>
-            <div class="short-pres title" data-aos="fade-up">Je suis <span class="underlined">Lucas DUVERNEUIL</span>, j'ai <span class="underlined"><span id="age">00</span> ans</span>, et je suis concepteur multimédia.</div>
+            <div class="short-pres title" data-aos="fade-up">Je suis <span class="underlined">Lucas DUVERNEUIL</span>, j'ai <span class="underlined" id="span-age"><span id="age">00</span> ans</span>, et je suis concepteur multimédia.</div>
             <div class="short-pres" data-aos="fade-up">Auto-Entrepreneur, <!--<a href="https://www.iut.u-bordeaux-montaigne.fr/" target="_blank" class="link short-link">l'IUT Bordeaux Montaigne</a>--> je conçois des solutions numériques adaptées à vos besoins, comme des sites webs, court-métrages, bandes d'annonces, flyers, infographies, musiques...</div>
             <div class="short-pres" data-aos="fade-up">J'aime beaucoup apprendre, échanger et me perfectionner. Mes maîtres mots sont <span class="underlined">Respect</span>, <span class="underlined">Sérieux</span> et <span class="underlined">Persévérance</span>.</div>
         </div>

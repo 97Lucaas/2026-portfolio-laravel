@@ -1156,3 +1156,26 @@ body::-webkit-scrollbar-thumb {
   width: 20px;
   margin-right: 5px;
 }
+
+.bday-bg{
+    background: linear-gradient(
+        120deg,
+        #fbc2eb,
+        #a6c1ee
+    );
+    background-size: 300% 300%;
+    animation: birthdayBg 8s ease-in-out infinite;
+    color:black
+}
+
+@keyframes birthdayBg {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
