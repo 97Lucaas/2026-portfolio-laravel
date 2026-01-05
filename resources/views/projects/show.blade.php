@@ -72,11 +72,18 @@
 
 <div class="centered-container project-page">
 
+    @if($projectune->id == $project->id)
+
+        <div class="a-la-une-badge bold">À la une</div>
+
+    @endif
+
     {{-- ===== HERO ===== --}}
     <section class="project-hero">
         <div class="project-hero-text">
             <h1 class="project-title">{{ $project->title }}</h1>
             <p class="project-short-desc">{{ $project->description }}</p>
+            <p class="discret regular">Le {{ \Carbon\Carbon::parse($project->date)->format('d/m/Y') }}</p>
         </div>
     </section>
 

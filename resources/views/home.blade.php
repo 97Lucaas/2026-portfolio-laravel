@@ -392,6 +392,10 @@
     <a data-aos="fade-up" href="https://www.linkedin.com/in/lucas-duverneuil-838384223/" target="_blank" class="link mb" style="font-size: 17px;">LinkedIn</a><br>
     <a data-aos="fade-up" href="tel:+33633975837" class="link mb" style="font-size: 17px;" target="_blank">06 33 97 58 37</a><br>
     <a data-aos="fade-up" href="mailto:lucas.duverneuil16@gmail.com" class="link mb extreme-short-link" target="_blank">lucas.duverneuil16@gmail.com</a>
+
+    <div class="foot-madewithlaravel aos-init aos-animate" data-aos="fade-up">
+        <span style="margin:0 auto;">Fait avec <span style="color:#e25555;">&#10084;</span> grâce à <a href="https://laravel.com/" target="_blank" class="link"><img src="{{ asset('laravel-white.png') }}" alt="" class="laravel-logo">Laravel</a></span>
+    </div>
 </div>
 
 </body>
