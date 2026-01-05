@@ -138,15 +138,20 @@
 
             </div>
 
-            @if($projectune->link)
+                @if($projectune->isExternal())
+                    <div class="bottom-a-la-une bold">
+                        <a class="c-btn btn-bot glow-btn" target="_blank" href="{{ $projectune->link }}">
+                            <span>En savoir plus</span>
+                        </a>
+                    </div>
+                @else
+                    <div class="bottom-a-la-une bold">
+                        <a class="c-btn btn-bot glow-btn" target="_blank" href="{{ route('projects.show', $projectune->slug) }}">
+                            <span>En savoir plus</span>
+                        </a>
+                    </div>
+                @endif
 
-                <div class="bottom-a-la-une bold">
-                    <a class="c-btn btn-bot glow-btn" target="_blank" href="{{ $projectune->link }}">
-                        <span>En savoir plus</span>
-                    </a>
-                </div>
-
-            @endif
         </div>
     </div>
 
