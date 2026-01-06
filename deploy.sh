@@ -28,4 +28,10 @@ php artisan route:clear
 php artisan view:clear
 php artisan optimize
 
+# 🔧 Fix Apache Ni-Host (NE PAS SUPPRIMER)
+cp /home/lucasduv/server_fixes/index.php /home/lucasduv/public_html/index.php
+cp /home/lucasduv/server_fixes/.htaccess /home/lucasduv/public_html/.htaccess
+chmod 644 /home/lucasduv/public_html/index.php
+chmod 644 /home/lucasduv/public_html/.htaccess
+
 echo "✅ Déploiement terminé avec succès"
