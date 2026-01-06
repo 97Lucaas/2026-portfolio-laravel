@@ -172,11 +172,16 @@
 
                         </div>
 
-                        @if($p->link)
+                        @if($p->isExternal())
                             <a class="c-btn btn-bot" target="_blank" href="{{ $p->link }}">
                                 <span>En savoir plus</span>
                             </a>
+                        @else
+                            <a class="c-btn btn-bot" target="_blank" href="{{ route('projects.show', $p->slug) }}">
+                                <span>En savoir plus</span>
+                            </a>
                         @endif
+
                     </div>
 
                     <div class="background-image"
