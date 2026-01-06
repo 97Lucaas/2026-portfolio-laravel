@@ -11,7 +11,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                 {{-- PROJETS --}}
-                <a href="{{ route('projects.index') }}"
+                <a href="{{ route('admin.projects.index') }}"
                    class="block bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6 hover:ring-2 hover:ring-indigo-500 transition">
 
                     <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
