@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
             <div class="mb-6">
-                <a href="{{ route('rates.create') }}"
+                <a href="{{ route('admin.rates.create') }}"
                    class="inline-flex items-center px-4 py-2 bg-indigo-600 rounded-md text-white text-xs font-semibold uppercase hover:bg-indigo-500">
                     ➕ Ajouter un avis
                 </a>

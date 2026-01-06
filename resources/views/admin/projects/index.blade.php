@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
             <div class="mb-6">
-                <a href="{{ route('projects.create') }}"
+                <a href="{{ route('admin.projects.create') }}"
                    class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-500">
                     ➕ Ajouter un projet
                 </a>

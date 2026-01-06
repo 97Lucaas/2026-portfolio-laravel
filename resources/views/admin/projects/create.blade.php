@@ -21,7 +21,7 @@
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
 
             <form method="POST"
-                  action="{{ route('projects.store') }}"
+                  action="{{ route('admin.projects.store') }}"
                   enctype="multipart/form-data"
                   class="bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6 space-y-6">
                 @csrf
