@@ -1,19 +1,31 @@
 #!/bin/bash
 
-echo "🔄 Déploiement Laravel..."
+echo "🚀 Déploiement Laravel"
 
-cd /home/lucasduv/portfolio_laravel || exit 1
+APP_PATH="/home/lucasduv/portfolio_laravel"
+PUBLIC_PATH="/home/lucasduv/public_html"
 
-echo "📦 Dépendances Composer"
-composer install --no-dev --optimize-autoloader
+cd "$APP_PATH" || exit 1
+
+echo "📦 Composer"
+composer install --no-dev --optimize-autoloader || exit 1
+
+echo "🧹 Nettoyage public_html"
+rm -rf "$PUBLIC_PATH"/*
+
+echo "📁 Copie du dossier public/"
+cp -R "$APP_PATH/public/"* "$PUBLIC_PATH/"
+
+echo "🔐 Permissions Laravel"
+chmod -R 775 storage bootstrap/cache
 
 echo "🗃️ Migrations"
-php artisan migrate --force
+php artisan migrate --force || exit 1
 
-echo "⚡ Cache & optimisation"
+echo "⚡ Optimisation"
 php artisan config:clear
 php artisan route:clear
 php artisan view:clear
 php artisan optimize
 
-echo "✅ Déploiement terminé"
+echo "✅ Déploiement terminé avec succès"
