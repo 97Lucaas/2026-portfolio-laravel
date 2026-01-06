@@ -32,7 +32,7 @@ public function store(Request $request)
         'link' => 'nullable|url',
 
         'images' => 'required|array|min:1',
-        'images.*' => 'image|max:4096',
+        'images.*' => 'image|max:51200',
         'main_image_index' => 'required|integer|min:0',
     ]);
 
@@ -92,7 +92,7 @@ public function store(Request $request)
             'link' => 'nullable|url',
 
             // images
-            'images.*' => 'image|max:4096',
+            'images.*' => 'image|max:51200',
             'main_image_index' => 'required',
             'deleted_images' => 'nullable',
         ]);
