@@ -37,7 +37,7 @@ class RateController extends Controller
 
         Rate::create($data);
 
-        return redirect()->route('rates.index')->with('success', 'Avis ajouté');
+        return redirect()->route('admin.rates.index')->with('success', 'Avis ajouté');
     }
 
     public function edit(Rate $rate)
@@ -64,7 +64,7 @@ class RateController extends Controller
 
         $rate->update($data);
 
-        return redirect()->route('rates.index')->with('success', 'Avis modifié');
+        return redirect()->route('admin.rates.index')->with('success', 'Avis modifié');
     }
 
     public function destroy(Rate $rate)
@@ -75,6 +75,6 @@ class RateController extends Controller
 
         $rate->delete();
 
-        return redirect()->route('rates.index')->with('success', 'Avis supprimé');
+        return redirect()->route('admin.rates.index')->with('success', 'Avis supprimé');
     }
 }

@@ -72,7 +72,7 @@ public function store(Request $request)
     $project->save();
 
     return redirect()
-        ->route('projects.index')
+        ->route('admin.projects.index')
         ->with('success', 'Projet ajouté');
 }
 
@@ -154,7 +154,7 @@ public function store(Request $request)
         $project->save();
 
         return redirect()
-            ->route('projects.index')
+            ->route('admin.projects.index')
             ->with('success', 'Projet modifié avec succès');
     }
 
@@ -164,6 +164,6 @@ public function store(Request $request)
         Storage::disk('public')->delete($project->img_pic);
         $project->delete();
 
-        return redirect()->route('projects.index')->with('success', 'Projet supprimé');
+        return redirect()->route('admin.projects.index')->with('success', 'Projet supprimé');
     }
 }
