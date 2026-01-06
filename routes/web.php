@@ -21,11 +21,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware('admin')->prefix('admin')->group(function () {
-    Route::get('/', fn () => view('admin.dashboard'));
+Route::middleware('admin')
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
 
-    Route::resource('projects', App\Http\Controllers\Admin\ProjectController::class);
-    Route::resource('rates', App\Http\Controllers\Admin\RateController::class);
-});
+        Route::get('/', fn () => view('admin.dashboard'));
+
+        Route::resource('projects', App\Http\Controllers\Admin\ProjectController::class);
+        Route::resource('rates', App\Http\Controllers\Admin\RateController::class);
+    });
 
 require __DIR__.'/auth.php';
