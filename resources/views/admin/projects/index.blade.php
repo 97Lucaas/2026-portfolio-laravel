@@ -37,13 +37,13 @@
                                 </td>
 
                                 <td class="px-6 py-4 text-right space-x-2">
-                                    <a href="{{ route('projects.edit', $project) }}"
+                                    <a href="{{ route('admin.projects.edit', $project) }}"
                                        class="text-indigo-600 hover:underline">
                                         ✏️
                                     </a>
 
                                     <form method="POST"
-                                          action="{{ route('projects.destroy', $project) }}"
+                                          action="{{ route('admin.projects.destroy', $project) }}"
                                           class="inline">
                                         @csrf
                                         @method('DELETE')
