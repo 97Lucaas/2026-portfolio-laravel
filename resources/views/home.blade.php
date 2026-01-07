@@ -121,36 +121,43 @@
     @if($projectune)
     <h3 class="realisations" data-aos="fade-up">Réalisations</h3>
 
-    <div class="a-la-une-title bold">À la une</div>
+    <div data-aos="fade-up">
+        <div class="a-la-une-title bold">À la une</div>
 
-    <div class="projet-une">
-        <img src="{{ asset('storage/'.$projectune->img_pic) }}"
-             alt="photo du projet {{ $projectune->title }}">
+        <div class="projet-une" style="position: relative;">
+            <img src="{{ asset('storage/'.$projectune->img_pic) }}"
+                alt="photo du projet {{ $projectune->title }}">
 
-        <div class="une-pro-info">
-            <div class="project-info">
-                <p class="discret regular">
-                    Le {{ \Carbon\Carbon::parse($projectune->date)->format('d/m/Y') }}
-                </p>
+            <div class="une-pro-info" style="z-index:2;">
+                <div class="project-info">
+                    <p class="discret regular">
+                        Le {{ \Carbon\Carbon::parse($projectune->date)->format('d/m/Y') }}
+                    </p>
 
-                <h3>{{ $projectune->title }}</h3>
-                <p>{{ $projectune->description }}</p>
+                    <h3>{{ $projectune->title }}</h3>
+                    <p>{{ $projectune->description }}</p>
+
+                </div>
+
+                    @if($projectune->isExternal())
+                        <div class="bottom-a-la-une bold">
+                            <a class="c-btn btn-bot glow-btn" target="_blank" href="{{ $projectune->link }}">
+                                <span>En savoir plus</span>
+                            </a>
+                        </div>
+                    @else
+                        <div class="bottom-a-la-une bold">
+                            <a class="c-btn btn-bot glow-btn" target="_blank" href="{{ route('projects.show', $projectune->slug) }}">
+                                <span>En savoir plus</span>
+                            </a>
+                        </div>
+                    @endif
 
             </div>
 
-                @if($projectune->isExternal())
-                    <div class="bottom-a-la-une bold">
-                        <a class="c-btn btn-bot glow-btn" target="_blank" href="{{ $projectune->link }}">
-                            <span>En savoir plus</span>
-                        </a>
-                    </div>
-                @else
-                    <div class="bottom-a-la-une bold">
-                        <a class="c-btn btn-bot glow-btn" target="_blank" href="{{ route('projects.show', $projectune->slug) }}">
-                            <span>En savoir plus</span>
-                        </a>
-                    </div>
-                @endif
+            <div class="background-image a-la-une-bg-img"
+                style="background-image: url('{{ asset('storage/'.$projectune->img_pic) }}');">
+            </div>
 
         </div>
     </div>
@@ -173,13 +180,17 @@
                         </div>
 
                         @if($p->isExternal())
+                        <div style="width: 100%; height: 60px;">
                             <a class="c-btn btn-bot" target="_blank" href="{{ $p->link }}">
                                 <span>En savoir plus</span>
                             </a>
+                        </div>
                         @else
+                        <div style="width: 100%; height: 60px;">
                             <a class="c-btn btn-bot" target="_blank" href="{{ route('projects.show', $p->slug) }}">
                                 <span>En savoir plus</span>
                             </a>
+                        </div>
                         @endif
 
                     </div>
@@ -260,7 +271,7 @@
                 <div class="info-box">Wordpress</div>
                 <img class="software-img" src="icons/wordpress.png" alt="wordpress">
                 <div class="progress-container">
-                    <div class="progress-bar" id="myProgressBar" style="width: 40%;"></div>
+                    <div class="progress-bar" id="myProgressBar" style="width: 65%;"></div>
                 </div>
             </div>
 
@@ -276,7 +287,7 @@
                 <div class="info-box">Laravel</div>
                 <img class="software-img" src="icons/laravel.png" alt="laravel">
                 <div class="progress-container">
-                    <div class="progress-bar" id="myProgressBar" style="width: 30%;"></div>
+                    <div class="progress-bar" id="myProgressBar" style="width: 45%;"></div>
                 </div>
             </div>
 
@@ -284,7 +295,7 @@
                 <div class="info-box">Hugo</div>
                 <img class="software-img" src="icons/hugo.png" alt="hugo">
                 <div class="progress-container">
-                    <div class="progress-bar" id="myProgressBar" style="width: 20%;"></div>
+                    <div class="progress-bar" id="myProgressBar" style="width: 15%;"></div>
                 </div>
             </div>
 
@@ -300,7 +311,7 @@
                 <div class="info-box">Tailwind</div>
                 <img class="software-img" src="icons/tailwind.png" alt="tailwind">
                 <div class="progress-container">
-                    <div class="progress-bar" id="myProgressBar" style="width: 10%;"></div>
+                    <div class="progress-bar" id="myProgressBar" style="width: 15%;"></div>
                 </div>
             </div>
             
@@ -312,7 +323,7 @@
                 <div class="info-box">PHP</div>
                 <img class="software-img" src="icons/php.png" alt="php">
                 <div class="progress-container">
-                    <div class="progress-bar" id="myProgressBar" style="width: 90%;"></div>
+                    <div class="progress-bar" id="myProgressBar" style="width: 95%;"></div>
                 </div>
             </div>
 
@@ -320,7 +331,7 @@
                 <div class="info-box">SQL</div>
                 <img class="software-img" src="icons/sql.png" alt="sql">
                 <div class="progress-container">
-                    <div class="progress-bar" id="myProgressBar" style="width: 80%;"></div>
+                    <div class="progress-bar" id="myProgressBar" style="width: 90%;"></div>
                 </div>
             </div>
 
@@ -328,7 +339,7 @@
                 <div class="info-box">CSS</div>
                 <img class="software-img" src="icons/css.png" alt="css">
                 <div class="progress-container">
-                    <div class="progress-bar" id="myProgressBar" style="width: 80%;"></div>
+                    <div class="progress-bar" id="myProgressBar" style="width: 90%;"></div>
                 </div>
             </div>
 
@@ -336,7 +347,7 @@
                 <div class="info-box">JS</div>
                 <img class="software-img" src="icons/js.png" alt="js">
                 <div class="progress-container">
-                    <div class="progress-bar" id="myProgressBar" style="width: 70%;"></div>
+                    <div class="progress-bar" id="myProgressBar" style="width: 85%;"></div>
                 </div>
             </div>
 

@@ -1179,3 +1179,10 @@ body::-webkit-scrollbar-thumb {
         background-position: 0% 50%;
     }
 }
+
+
+@media (min-width: 1000px) { 
+  .a-la-une-bg-img {
+    display: none;
+  }
+}
