@@ -35,8 +35,8 @@
                                     {{ \Carbon\Carbon::parse($rate->date)->format('Y') }}
                                 </td>
                                 <td class="px-6 py-4 text-right space-x-2">
-                                    <a href="{{ route('rates.edit', $rate) }}" class="text-indigo-600">✏️</a>
-                                    <form method="POST" action="{{ route('rates.destroy', $rate) }}" class="inline">
+                                    <a href="{{ route('admin.rates.edit', $rate) }}" class="text-indigo-600">✏️</a>
+                                    <form method="POST" action="{{ route('admin.rates.destroy', $rate) }}" class="inline">
                                         @csrf
                                         @method('DELETE')
                                         <button class="text-red-600">🗑️</button>
