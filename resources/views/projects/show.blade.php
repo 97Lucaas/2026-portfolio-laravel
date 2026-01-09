@@ -1,3 +1,7 @@
+@php
+    use App\Support\Markdown;
+@endphp
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -98,7 +102,8 @@
     {{-- ===== CONTENU ===== --}}
     <section class="project-content">
         <div class="project-content-inner">
-            {!! nl2br(e($project->content)) !!}
+            {{-- nl2br(e($project->content)) --}}
+            {!! Markdown::render($project->content) !!}
         </div>
     </section>
 
