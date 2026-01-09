@@ -181,13 +181,13 @@
                         </div>
 
                         @if($p->isExternal())
-                        <div style="width: 100%; height: 60px;">
+                        <div class="bold" style="width: 100%; height: 60px;">
                             <a class="c-btn btn-bot" target="_blank" href="{{ $p->link }}">
                                 <span>En savoir plus</span>
                             </a>
                         </div>
                         @else
-                        <div style="width: 100%; height: 60px;">
+                        <div class="bold" style="width: 100%; height: 60px;">
                             <a class="c-btn btn-bot" target="_blank" href="{{ route('projects.show', $p->slug) }}">
                                 <span>En savoir plus</span>
                             </a>
