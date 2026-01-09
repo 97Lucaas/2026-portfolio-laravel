@@ -3,7 +3,6 @@
 namespace App\Support;
 
 use Parsedown;
-use DOMDocument;
 
 class Markdown
 {
@@ -11,18 +10,18 @@ class Markdown
     {
         /*
         |--------------------------------------------------------------------------
-        | 1️⃣ Décalage EXACT des titres (Discord-like)
+        | 1️⃣ Titres Discord-like
         |--------------------------------------------------------------------------
         */
 
-        // ### -> ####   (h4)
-        $text = preg_replace('/^###(?!#)\s+/m', '#### ', $text);
+        // ### -> h4
+        $text = preg_replace('/^###\s+/m', '#### ', $text);
 
-        // ## -> ###     (h3)
-        $text = preg_replace('/^##(?!#)\s+/m', '### ', $text);
+        // ## -> h3
+        $text = preg_replace('/^##\s+/m', '### ', $text);
 
-        // # -> ##       (h2)
-        $text = preg_replace('/^#(?!#)\s+/m', '## ', $text);
+        // # -> h2
+        $text = preg_replace('/^#\s+/m', '## ', $text);
 
         /*
         |--------------------------------------------------------------------------
@@ -31,13 +30,13 @@ class Markdown
         */
         $text = preg_replace(
             '/__(.*?)__/',
-            '%%UNDERLINE_START%%$1%%UNDERLINE_END%%',
+            '%%UNDERLINE%%$1%%ENDUNDERLINE%%',
             $text
         );
 
         /*
         |--------------------------------------------------------------------------
-        | 3️⃣ Markdown parsing sécurisé
+        | 3️⃣ Markdown parsing
         |--------------------------------------------------------------------------
         */
         $parsedown = new Parsedown();
@@ -48,12 +47,15 @@ class Markdown
 
         /*
         |--------------------------------------------------------------------------
-        | 4️⃣ Ajout class="link" sur TOUS les <a>
+        | 4️⃣ Ajout class="link" + target sur TOUS les <a>
+        | (liens simples ET [texte](url))
         |--------------------------------------------------------------------------
         */
-        $html = preg_replace(
-            '/<a\s+href="([^"]+)"/i',
-            '<a href="$1" class="link" target="_blank" rel="noopener noreferrer"',
+        $html = preg_replace_callback(
+            '/<a\s+href="([^"]+)".*?>(.*?)<\/a>/i',
+            function ($m) {
+                return '<a href="' . $m[1] . '" class="link" target="_blank" rel="noopener noreferrer">' . $m[2] . '</a>';
+            },
             $html
         );
 
@@ -63,7 +65,7 @@ class Markdown
         |--------------------------------------------------------------------------
         */
         $html = str_replace(
-            ['%%UNDERLINE_START%%', '%%UNDERLINE_END%%'],
+            ['%%UNDERLINE%%', '%%ENDUNDERLINE%%'],
             ['<u>', '</u>'],
             $html
         );
