@@ -372,7 +372,7 @@
     </div>
 </div>
 
-@if($certifications)
+@if($certifications->isNotEmpty())
 <div class="centered-container">
     <h3 data-aos="fade-up" class="centered-container-title">Certifications</h3>
 
