@@ -388,7 +388,7 @@
                     @if($certification->logo)
                         <img src="{{ asset('storage/'.$certification->logo) }}"
                             alt="{{ $certification->title }}"
-                            style="max-width: 200px;border: 1px solid #ccc;border-radius: 8px;width: 50px;">
+                            class="cert-img">
                     @endif
 
                     <div class="cert-info">
