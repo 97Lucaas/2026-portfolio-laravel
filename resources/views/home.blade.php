@@ -372,6 +372,39 @@
     </div>
 </div>
 
+@if($certifications)
+<div class="centered-container">
+    <h3 data-aos="fade-up" class="centered-container-title">Certifications</h3>
+
+
+
+        @foreach($certifications as $certification)
+            <a href="{{ $certification->external_url }}"
+            target="_blank"
+            data-aos="fade-up"
+            class="cert-container">
+
+                <div class="cert-top">
+                    @if($certification->logo)
+                        <img src="{{ asset('storage/'.$certification->logo) }}"
+                            alt="{{ $certification->title }}"
+                            style="max-width: 200px;border: 1px solid #ccc;border-radius: 8px;width: 50px;">
+                    @endif
+
+                    <div class="cert-info">
+                        <h4>{{ $certification->title }}</h4>
+                        <span style="opacity: 0.7;">{{ $certification->obtained_at->format('Y') }}</span>
+                    </div>
+                </div>
+                <span>{{ $certification->short_description }}</span>
+            </a>
+        @endforeach
+
+
+
+</div>
+@endif
+
 {{-- ========== AVIS CLIENTS ========== --}}
 @if($rates->isNotEmpty())
 <div class="centered-container">
