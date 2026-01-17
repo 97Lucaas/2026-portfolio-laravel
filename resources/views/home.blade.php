@@ -61,7 +61,7 @@
     </div>
 </div>
 
-<a class="c-btn cv-btn bold" id="cv-btn" target="_blank" href="{{ asset('cv-duverneuil.pdf') }}">
+<a class="c-btn cv-btn bold" id="cv-btn" target="_blank" href="{{ asset('cv-duverneuil_internet_2026.png') }}">
     <span>Voir mon CV</span>
 </a>
 
