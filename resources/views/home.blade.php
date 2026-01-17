@@ -70,7 +70,7 @@
         <img src="{{ asset('LD.png') }}" alt="Logo lucas duverneuil">
         <div>
             <h1>Lucas<br>DUVERNEUIL</h1>
-            <h2>Concepteur Multimédia</h2>
+            <h2 style="font-size: 1.5em;">Concepteur Multimédia</h2>
         </div>
     </div>
 </div>
@@ -106,7 +106,7 @@
 </div>
 
 <div class="centered-container">
-    <h3 data-aos="fade-up">À propos</h3>
+    <h3 data-aos="fade-up" class="centered-container-title">À propos</h3>
     <div data-aos="fade-up">
         <div class="short-pres">
             Apréciant les jeux vidéos dès mes 8 ans, j'y ai exploré l'informatique, puis me suis perfectionné en découvrant le command block, où j'ai trouvé ma passion pour la programmation. En autodidacte, j'ai développé des robots Discord, et plus tard, débuté mon parcours dans le développement web avec HTML, CSS et PHP, créant mon propre site, un forum simple. Intégrer l'IUT MMI de Bordeaux Montaigne a été un honneur, permettant de fusionner mes intérêts pour le développement, le design et l'audiovisuel, tout en réalisant divers projets, dont la refonte de sites web et la création d'un blog. Pour découvrir davantage mes réalisations, consultez mon portfolio.
@@ -120,7 +120,7 @@
 {{-- ========== A LA UNE ========== --}}
 <div class="centered-container">
     @if($projectune)
-    <h3 class="realisations" data-aos="fade-up">Réalisations</h3>
+    <h3 class="realisations centered-container-title" data-aos="fade-up">Réalisations</h3>
 
     <div data-aos="fade-up">
         <div class="a-la-une-title bold">À la une</div>
@@ -135,7 +135,7 @@
                         Le {{ \Carbon\Carbon::parse($projectune->date)->format('d/m/Y') }}
                     </p>
 
-                    <h3>{{ $projectune->title }}</h3>
+                    <h3 class="centered-container-title">{{ $projectune->title }}</h3>
                     <p>{{ $projectune->description }}</p>
 
                 </div>
@@ -175,19 +175,19 @@
                             <p class="discret regular">
                                 Le {{ \Carbon\Carbon::parse($p->date)->format('d/m/Y') }}
                             </p>
-                            <h3>{{ $p->title }}</h3>
+                            <h3 class="centered-container-title">{{ $p->title }}</h3>
                             <p>{{ $p->description }}</p>
 
                         </div>
 
                         @if($p->isExternal())
-                        <div style="width: 100%; height: 60px;">
+                        <div class="bold" style="width: 100%; height: 60px;">
                             <a class="c-btn btn-bot" target="_blank" href="{{ $p->link }}">
                                 <span>En savoir plus</span>
                             </a>
                         </div>
                         @else
-                        <div style="width: 100%; height: 60px;">
+                        <div class="bold" style="width: 100%; height: 60px;">
                             <a class="c-btn btn-bot" target="_blank" href="{{ route('projects.show', $p->slug) }}">
                                 <span>En savoir plus</span>
                             </a>
@@ -209,7 +209,7 @@
 </div>
 
 <div class="centered-container">
-    <h3 data-aos="fade-up">Mes compétences</h3>
+    <h3 data-aos="fade-up" class="centered-container-title">Mes compétences</h3>
 
     <div class="accordion" data-aos="fade-up">
         <div class="accordion-title">
@@ -266,7 +266,7 @@
 <div class="centered-container">
     <div class="flex skills">
         <div class="skills-software-grid">
-            <h3 data-aos="fade-up">Frameworks</h3>
+            <h3 data-aos="fade-up" class="centered-container-title">Frameworks</h3>
 
             <div class="skill-software" data-aos="fade-up">
                 <div class="info-box">Wordpress</div>
@@ -318,7 +318,7 @@
             
         </div>
         <div class="skills-software-grid">
-            <h3 data-aos="fade-up">Langages</h3>
+            <h3 data-aos="fade-up" class="centered-container-title">Langages</h3>
 
             <div class="skill-software" data-aos="fade-up">
                 <div class="info-box">PHP</div>
@@ -372,10 +372,43 @@
     </div>
 </div>
 
+@if($certifications->isNotEmpty())
+<div class="centered-container">
+    <h3 data-aos="fade-up" class="centered-container-title">Certifications</h3>
+
+
+
+        @foreach($certifications as $certification)
+            <a href="{{ $certification->external_url }}"
+            target="_blank"
+            data-aos="fade-up"
+            class="cert-container">
+
+                <div class="cert-top">
+                    @if($certification->logo)
+                        <img src="{{ asset('storage/'.$certification->logo) }}"
+                            alt="{{ $certification->title }}"
+                            class="cert-img">
+                    @endif
+
+                    <div class="cert-info">
+                        <h4>{{ $certification->title }}</h4>
+                        <span style="opacity: 0.7;">{{ $certification->obtained_at->format('Y') }}</span>
+                    </div>
+                </div>
+                <span>{{ $certification->short_description }}</span>
+            </a>
+        @endforeach
+
+
+
+</div>
+@endif
+
 {{-- ========== AVIS CLIENTS ========== --}}
 @if($rates->isNotEmpty())
 <div class="centered-container">
-    <h3 data-aos="fade-up">Ils me font confiance</h3>
+    <h3 data-aos="fade-up" class="centered-container-title">Ils me font confiance</h3>
 
     <div class="carousel-container" data-aos="fade-up">
         <div class="carousel">
@@ -405,7 +438,7 @@
 @endif
 
 <div class="centered-container">
-    <h3 data-aos="fade-up">Contact</h3>
+    <h3 data-aos="fade-up" class="centered-container-title">Contact</h3>
     <a data-aos="fade-up" href="https://www.linkedin.com/in/lucas-duverneuil-838384223/" target="_blank" class="link mb" style="font-size: 17px;">LinkedIn</a><br>
     <a data-aos="fade-up" href="tel:+33633975837" class="link mb" style="font-size: 17px;" target="_blank">06 33 97 58 37</a><br>
     <a data-aos="fade-up" href="mailto:lucas.duverneuil16@gmail.com" class="link mb extreme-short-link" target="_blank">lucas.duverneuil16@gmail.com</a>

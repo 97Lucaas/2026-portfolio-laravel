@@ -37,6 +37,16 @@
                     </p>
                 </a>
 
+                <a href="{{ route('admin.certifications.index') }}" class="block bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6 hover:ring-2 hover:ring-indigo-500 transition">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                        📜 Certifications
+                    </h3>
+
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Gérer les certifications, logos, descriptions et dates d'obtention.
+                    </p>
+                </a>
+
             </div>
 
         </div>

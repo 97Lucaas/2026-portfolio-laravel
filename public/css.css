@@ -226,6 +226,18 @@ body::-webkit-scrollbar-thumb {
     font-weight: 900;
   }
 
+  h2{
+      font-size: 2.2rem;
+  }
+
+  h3{
+      font-size: 1.7rem;
+  }
+
+  h4{
+      font-size: 1.3rem;
+  }
+
   p{
     font-family: "Basier Circle Regular";
     font-weight: 400; 
@@ -594,7 +606,7 @@ body::-webkit-scrollbar-thumb {
   top: 75px;
 }
 
-.centered-container h3{
+.centered-container .centered-container-title{
   font-size: 30px;
   margin-bottom: 30px;
 }
@@ -1184,5 +1196,92 @@ body::-webkit-scrollbar-thumb {
 @media (min-width: 1000px) { 
   .a-la-une-bg-img {
     display: none;
+  }
+}
+
+.project-content-inner h2{
+  margin-top: 90px;
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+
+.project-content-inner h3{
+  margin-top: 65px;
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+
+.project-content-inner h4{
+  margin-top: 40px;
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+
+.project-content-inner p{
+  margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cert-container{
+  display: flex;
+  border-bottom: 1px solid white;
+  width: 100%;
+  padding: 15px;
+  gap: 20px;
+  color: white;
+  text-decoration: none;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.cert-info{
+  display: flex;
+  align-items: center;
+  gap:20px
+}
+
+.cert-top{
+  display: flex;
+  gap: 20px;
+}
+
+.cert-img{
+  border-radius: 8px;
+  width: 60px;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 1000px) {
+  .cert-info{
+    display: block;
+    gap:0
+  }
+
+  .cert-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+  }
+
+  .cert-img{
+    border-radius: 8px;
+    width: 50px;
+    object-fit: contain;
   }
 }

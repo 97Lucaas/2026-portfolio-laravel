@@ -1,3 +1,7 @@
+@php
+    use App\Support\Markdown;
+@endphp
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,19 +12,19 @@
     <link rel="stylesheet" href="{{ asset('css.css') }}?v={{ filemtime(public_path('css.css')) }}">
 
 
-    <title>Lucas DUVERNEUIL - Projet</title>
+    <title>Lucas DUVERNEUIL - {{ $project->title }}</title>
 
-    <meta name="description" content="Portfolio de Lucas DUVERNEUIL, concepteur multimédia, dans l'audiovisuel et la création de site webs.">
+    <meta name="description" content="{{ $project->description }}">
     <meta name="author" content="Lucas DUVERNEUIL">
 
-    <meta property="og:title" content="Lucas DUVERNEUIL - Portfolio">
-    <meta property="og:description" content="Portfolio de Lucas DUVERNEUIL, concepteur multimédia.">
+    <meta property="og:title" content="Lucas DUVERNEUIL - {{ $project->title }}">
+    <meta property="og:description" content="{{ $project->description }}">
     <meta property="og:image" content="{{ asset('LD.png') }}">
     <meta property="og:url" content="{{ url('/') }}">
     <meta property="og:type" content="website">
 
-    <meta name="twitter:title" content="Lucas DUVERNEUIL">
-    <meta name="twitter:description" content="Portfolio de Lucas DUVERNEUIL, concepteur multimédia.">
+    <meta name="twitter:title" content="Lucas DUVERNEUIL - {{ $project->title }}">
+    <meta name="twitter:description" content="{{ $project->description }}">
 
     <link rel="icon" type="image/x-icon" href="{{ asset('icons/LD_logo.ico') }}">
 
@@ -98,7 +102,8 @@
     {{-- ===== CONTENU ===== --}}
     <section class="project-content">
         <div class="project-content-inner">
-            {!! nl2br(e($project->content)) !!}
+            {{-- nl2br(e($project->content)) --}}
+            {!! Markdown::render($project->content) !!}
         </div>
     </section>
 
